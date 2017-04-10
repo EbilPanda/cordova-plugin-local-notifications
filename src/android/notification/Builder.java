@@ -145,6 +145,10 @@ public class Builder {
             builder.setLargeIcon(options.getIconBitmap());
         }
 
+        if (vibrate != null) {
+            builder.setVibrate(vibrate);
+        }
+
         applyDeleteReceiver(builder);
         applyContentReceiver(builder);
 

@@ -318,6 +318,17 @@ public class Options {
         return uri;
     }
 
+    public long[] getVibratePattern() {
+        JSONArray patternJSONArray = options.optJSONArray("vibratePattern");
+        long[] patternArray = new Array(patternJSONArray.length());
+        for(int i = 0; i < patternJSONArray.length(); i++){
+            patternArray[i] = patternJSONArray.optLong(i, 0);
+        }
+        if(patternArray.length > 0)
+            return patternArray();
+        return null;
+    }
+
     /**
      * Icon bitmap for the local notification.
      */
